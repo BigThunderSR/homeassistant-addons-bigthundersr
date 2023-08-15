@@ -12,7 +12,7 @@
 [![Notarize Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_notarize.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_notarize.yml)
 [![Authenticate Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_authenticate.yml)
 
-Home Assistant Add-ons created and/or modified by [BigThunderSR](https://github.com/BigThunderSR.
+Home Assistant Add-ons created and/or modified by [BigThunderSR](https://github.com/BigThunderSR).
 
 <!--Add-on documentation: <https://developers.home-assistant.io/docs/add-ons> -->
 
