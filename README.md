@@ -1,16 +1,16 @@
 # BigThunderSR Home Assistant Add-on Repository
 
-[![Home Assistant Add-on](https://img.shields.io/badge/home_assistant-add--on-blue.svg?logo=homeassistant&logoColor=white)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt)
+[![Home Assistant Add-on](https://img.shields.io/badge/home_assistant-add--on-blue.svg?logo=homeassistant&logoColor=white)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr)
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports armhf Architecture][armhf-shield]
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
-[![CodeQL](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/github-code-scanning/codeql)
-[![Lint](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/lint.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/lint.yaml)
-[![Builder](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/builder.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/builder.yaml)
-[![Notarize Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_notarize.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_notarize.yml)
-[![Authenticate Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/actions/workflows/cas_authenticate.yml)
+[![CodeQL](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/github-code-scanning/codeql)
+[![Lint](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/lint.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/lint.yaml)
+[![Builder](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/builder.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/builder.yaml)
+[![Notarize Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml)
+[![Authenticate Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_authenticate.yml)
 
 Home Assistant Add-ons created and/or modified by [BigThunderSR](https://github.com/BigThunderSR).
 
@@ -22,7 +22,7 @@ Home Assistant Add-ons created and/or modified by [BigThunderSR](https://github.
 
 This repository contains the following add-ons
 
-- [Letsencrypt-BigThunderSR](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt/tree/main/letsencrypt-bigthundersr)
+- [Letsencrypt-BigThunderSR](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/tree/main/letsencrypt-bigthundersr)
 
 ## My other Home Assistant Add-ons
 
