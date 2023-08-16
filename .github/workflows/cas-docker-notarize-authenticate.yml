@@ -83,7 +83,7 @@ jobs:
             distro: ubuntu_latest            
           - arch: armv7
             distro: ubuntu_latest
-          - arch: armhf
+          - arch: none
             distro: ubuntu_latest
     
     steps:    
@@ -132,7 +132,7 @@ jobs:
                 "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
                 "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
                 ;;
-            armhf)
+            none)
                 docker pull --platform linux/arm64 ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
                 "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
                 "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
