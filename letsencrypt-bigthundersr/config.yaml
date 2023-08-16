@@ -1,5 +1,5 @@
 ---
-version: 4.12.10
+version: 4.12.11
 slug: letsencrypt-bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
@@ -7,12 +7,12 @@ codenotary: bigthundersr@outlook.com
 url: https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/tree/master/letsencrypt-bigthundersr
 arch:
   - armhf
-  - armv7
+#  - armv7
   - aarch64
   - amd64
   - i386
 boot: manual
-#image: "ghcr.io/bigthundersr/ha-addons-bigthundersr-addon-letsencrypt-bigthundersr-{arch}"
+image: "ghcr.io/bigthundersr/addon-letsencrypt-bigthundersr-{arch}"
 init: false
 map:
   - ssl:rw
