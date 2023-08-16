@@ -11,7 +11,6 @@ arch:
 #  - armhf
 #  - armv7
 #  - i386
-
 boot: manual
 image: "ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-{arch}"
 init: false
