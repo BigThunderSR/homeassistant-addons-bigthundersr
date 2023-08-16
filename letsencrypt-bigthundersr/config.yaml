@@ -6,7 +6,7 @@ description: Manage certificate from Let's Encrypt
 codenotary: bigthundersr@outlook.com
 url: https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/tree/master/letsencrypt-bigthundersr
 arch:
-  - armhf
+#  - armhf
 #  - armv7
   - aarch64
   - amd64
