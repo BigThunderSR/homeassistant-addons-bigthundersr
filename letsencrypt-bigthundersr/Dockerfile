@@ -7,7 +7,9 @@ ARG \
     CRYPTOGRAPHY_VERSION \
     CERTBOT_VERSION \
     CERTBOT_DNS_AZURE_VERSION \
+    CERTBOT_DNS_CLOUDXNS_VERSION \
     CERTBOT_DNS_DIRECTADMIN_VERSION \
+    CERTBOT_DNS_DYNU_VERSION \
     CERTBOT_DNS_HETZNER_VERSION \
     CERTBOT_DNS_GOOGLE_DOMAINS_VERSION \
     CERTBOT_NETCUP_VERSION \
@@ -29,17 +31,23 @@ RUN \
         musl-dev \
         openssl-dev \
         cargo \
+        gcc \
+        python3-dev \
+
+    && pip3 install --upgrade pip \
+
     && pip3 install --no-cache-dir --find-links \
-        "https://wheels.home-assistant.io/alpine-$(cut -d '.' -f 1-2 < /etc/alpine-release)/${BUILD_ARCH}/" \ 
+        "https://wheels.home-assistant.io/alpine-$(cut -d '.' -f 1-2 < /etc/alpine-release)/${BUILD_ARCH}/" \
         cryptography==${CRYPTOGRAPHY_VERSION} \
         certbot==${CERTBOT_VERSION} \
         certbot-dns-azure==${CERTBOT_DNS_AZURE_VERSION} \
         certbot-dns-cloudflare==${CERTBOT_VERSION} \
-        certbot-dns-cloudxns==${CERTBOT_VERSION} \
+        certbot-dns-cloudxns==${CERTBOT_DNS_CLOUDXNS_VERSION} \
         certbot-dns-digitalocean==${CERTBOT_VERSION} \
         certbot-dns-directadmin==${CERTBOT_DNS_DIRECTADMIN_VERSION} \
         certbot-dns-dnsimple==${CERTBOT_VERSION} \
         certbot-dns-dnsmadeeasy==${CERTBOT_VERSION} \
+        certbot-dns-dynu==${CERTBOT_DNS_DYNU_VERSION} \
         certbot-dns-gehirn==${CERTBOT_VERSION} \
         certbot-dns-google==${CERTBOT_VERSION} \
         certbot-dns-google-domains==${CERTBOT_DNS_GOOGLE_DOMAINS_VERSION} \

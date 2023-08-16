@@ -1,9 +1,10 @@
 ---
 version: 4.12.9
-slug: letsencrypt
-name: Let's Encrypt
+slug: letsencrypt-bigthundersr
+name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
-url: https://github.com/home-assistant/addons/tree/master/letsencrypt
+codenotary: bigthundersr@outlook.com
+url: https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/tree/master/letsencrypt-bigthundersr
 arch:
   - armhf
   - armv7
@@ -11,7 +12,7 @@ arch:
   - amd64
   - i386
 boot: manual
-image: homeassistant/{arch}-addon-letsencrypt
+#image: homeassistant/{arch}-addon-letsencrypt
 init: false
 map:
   - ssl:rw
@@ -48,6 +49,7 @@ schema:
     directadmin_password: str?
     directadmin_url: str?
     directadmin_username: str?
+    dynu_auth_token: str?
     dnsimple_token: str?
     dnsmadeeasy_api_key: str?
     dnsmadeeasy_secret_key: str?
@@ -74,7 +76,7 @@ schema:
     ovh_endpoint: str?
     propagation_seconds: int(60,3600)?
     provider: "list(dns-azure|dns-cloudflare|dns-cloudxns|dns-digitalocean|\
-      dns-directadmin|dns-dnsimple|dns-dnsmadeeasy|dns-gehirn|\
+      dns-directadmin|dns-dynu|dns-dnsimple|dns-dnsmadeeasy|dns-gehirn|\
       dns-google|dns-google-domains|\
       dns-hetzner|dns-linode|dns-luadns|dns-njalla|dns-nsone|dns-ovh|\
       dns-rfc2136|dns-route53|dns-sakuracloud|dns-netcup|dns-gandi|\

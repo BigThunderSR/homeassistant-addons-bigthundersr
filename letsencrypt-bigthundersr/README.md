@@ -1,4 +1,6 @@
-# Home Assistant Add-on: Letsencrypt
+# Home Assistant Add-on: Letsencrypt - BigThunderSR Fork
+
+This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider.
 
 Let's Encrypt is a certificate authority that provides free X.509 certificates for Transport Layer Security encryption via an automated process designed to eliminate the hitherto complex process of manual creation, validation, signing, installation, and renewal of certificates for secure websites.
 
@@ -14,7 +16,6 @@ The generated certificate can be used within others addons. By default the path 
 [issue]: https://github.com/home-assistant/hassio-addons/issues
 [certbot]: https://certbot.eff.org
 [reddit]: https://reddit.com/r/homeassistant
-
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
