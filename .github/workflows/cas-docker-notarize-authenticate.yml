@@ -42,7 +42,35 @@ jobs:
           asset: docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-amd64
           signerID: QmlnVGh1bmRlclNSQG91dGxvb2suY29t
   
-  
+  notarize-docker-image-bom-i386:    
+      runs-on: ubuntu-latest
+      steps:    
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Pull i386 Docker image
+        run: docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-i386
+        shell: bash
+          
+      - name: Notarize i386 Docker Image BOM
+          # --> Run the GitHub action
+          # uses: codenotary/cas-notarize-docker-image-github-action@v1.0.0
+        uses: codenotary/cas-notarize-docker-image-bom-github-action@main
+        with:
+          asset: docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-i386
+          cas_api_key: ${{ secrets.CAS_API_KEY }}
+          
+      - name: Authenticate i386 Docker Image
+        uses: codenotary/cas-authenticate-docker-image-github-action@main
+        with:
+          asset: docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-i386
+          signerID: QmlnVGh1bmRlclNSQG91dGxvb2suY29t
+              
+      - name: Authenticate i386 Docker Image BOM
+        uses: codenotary/cas-authenticate-docker-bom-github-action@main
+        with:
+          asset: docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-i386
+          signerID: QmlnVGh1bmRlclNSQG91dGxvb2suY29t
+
   notarize-docker-image-bom-arm:
     runs-on: ubuntu-latest
     name: Run on ${{ matrix.distro }} ${{ matrix.arch }}
@@ -50,13 +78,13 @@ jobs:
     # Run steps on a matrix of x arch/distro combinations
     strategy:
       matrix:
-        include:
-     #     - arch: armv7
-     #       distro: ubuntu_latest
+        include:     
           - arch: aarch64
             distro: ubuntu_latest            
-     #     - arch: armv7
-     #       distro: ubuntu_latest
+          - arch: armv7
+            distro: ubuntu_latest
+          - arch: armhf
+            distro: ubuntu_latest
     
     steps:    
       - name: Checkout repository
@@ -96,8 +124,18 @@ jobs:
             case "${{ matrix.arch }}" in
             aarch64)
                 docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
+                ;;            
+            armv7)
+                docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+                ;;
+            ppc64le)
+                docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
                 ;;              
             esac
             
             "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
             "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
+            "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+            "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+            "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
+            "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
