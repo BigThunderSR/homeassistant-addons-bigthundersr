@@ -4,7 +4,7 @@ This is a fork of the [official Letsencrypt Home Assistant Add-on](https://githu
 
 Let's Encrypt is a certificate authority that provides free X.509 certificates for Transport Layer Security encryption via an automated process designed to eliminate the hitherto complex process of manual creation, validation, signing, installation, and renewal of certificates for secure websites.
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] <!-- ![Supports armhf Architecture][armhf-shield] --> <!-- ![Supports armv7 Architecture][armv7-shield] --> <!-- ![Supports i386 Architecture][i386-shield] -->
 
 Setting up Letsencrypt allows you to use validated certificates for your webpages and web-interfaces.
 It requires you to own the domain you are requesting the certificate for.
