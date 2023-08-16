@@ -123,13 +123,13 @@ jobs:
             export CAS_API_KEY=${{ secrets.CAS_API_KEY }}; "${PWD}/cas" login
             case "${{ matrix.arch }}" in
             aarch64)
-                docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
+                docker pull --platform linux/arm64 ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
                 ;;            
             armv7)
-                docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+                docker pull --platform linux/arm/v7 ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
                 ;;
-            ppc64le)
-                docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
+            armhf)
+                docker pull --platform linux/arm/hf ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
                 ;;              
             esac
             
