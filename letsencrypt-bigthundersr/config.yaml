@@ -12,7 +12,7 @@ arch:
 #  - armv7
 #  - i386
 boot: manual
-image: "ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-addon-{arch}"
+image: "ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-bigthundersr-{arch}"
 init: false
 map:
   - ssl:rw
