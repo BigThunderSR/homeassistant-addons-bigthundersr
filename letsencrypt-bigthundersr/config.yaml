@@ -8,9 +8,9 @@ url: https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/tree/mast
 arch:
   - aarch64
   - amd64
-#  - armhf
-#  - armv7
-#  - i386
+  - armhf
+  - armv7
+  - i386
 boot: manual
 image: "ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-{arch}"
 init: false

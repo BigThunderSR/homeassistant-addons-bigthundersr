@@ -17,8 +17,10 @@ ARG \
     CERTBOT_GANDI_VERSION \
     CERTBOT_DNS_TRANSIP_VERSION \
     CERTBOT_DNS_INWX_VERSION \
-    ACME_VERSION
-
+    ACME_VERSION \
+# armhf and armv7 fix/workaround
+ENV CARGO_NET_GIT_FETCH_WITH_CLI=true \
+#
 RUN \
     set -x \
     && apk add --no-cache --update \
