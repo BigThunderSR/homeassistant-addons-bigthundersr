@@ -85,7 +85,7 @@ jobs:
             distro: ubuntu_latest
           - arch: none
             distro: none
-            base_image: aarch64/ubuntu_latest
+            base_image: arm32v7/ubuntu
     
     steps:    
       - name: Checkout repository
