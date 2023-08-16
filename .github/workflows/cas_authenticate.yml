@@ -96,7 +96,7 @@ jobs:
       - name: Notarize letsencrypt-bigthundersr/rootfs/etc/cont-init.d/file-structure.sh       
         uses: codenotary/cas-authenticate-asset-github-action@main
         with:          
-          asset: Notarize letsencrypt-bigthundersr/rootfs/etc/cont-init.d/file-structure.sh
+          asset: letsencrypt-bigthundersr/rootfs/etc/cont-init.d/file-structure.sh
           signerID: QmlnVGh1bmRlclNSQG91dGxvb2suY29t
 
       - name: Authenticate letsencrypt-bigthundersr/rootfs/etc/services.d/lets-encrypt/finish        
