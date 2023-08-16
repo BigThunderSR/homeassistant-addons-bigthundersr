@@ -124,18 +124,21 @@ jobs:
             case "${{ matrix.arch }}" in
             aarch64)
                 docker pull --platform linux/arm64 ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
+                "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
+                "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
                 ;;            
             armv7)
                 docker pull --platform linux/arm/v7 ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+                "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
+                "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
                 ;;
             armhf)
                 docker pull --platform linux/arm/hf ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
+                "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
+                "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
                 ;;              
             esac
             
-            "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
-            "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-aarch64
-            "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
-            "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armv7
-            "${PWD}/cas" notarize --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
-            "${PWD}/cas" authenticate --bom docker://ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-armhf
+            
+            
+            
