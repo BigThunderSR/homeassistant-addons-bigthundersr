@@ -12,7 +12,7 @@ arch:
   - amd64
   - i386
 boot: manual
-image: "ghcr.io/bigthundersr/ha-addons-bigthundersr/addon-letsencrypt-bigthundersr-{arch}"
+image: "ghcr.io/bigthundersr/ha-addons-bigthundersr-addon-letsencrypt-bigthundersr-{arch}"
 init: false
 map:
   - ssl:rw
