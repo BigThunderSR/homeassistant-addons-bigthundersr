@@ -1,6 +1,6 @@
 ---
-version: 4.12.10
-slug: letsencrypt-bigthundersr
+version: 4.12.11
+slug: letsencrypt_bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
 codenotary: bigthundersr@outlook.com
