@@ -17,7 +17,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:    
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Pull amd64 Docker image
         run: docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-amd64
         shell: bash
@@ -46,7 +46,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:    
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Pull i386 Docker image
         run: docker pull ghcr.io/bigthundersr/homeassistant-addons-bigthundersr-letsencrypt-i386
         shell: bash
@@ -89,7 +89,7 @@ jobs:
     
     steps:    
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - uses: uraimo/run-on-arch-action@v2
         name: Run commands on arm
