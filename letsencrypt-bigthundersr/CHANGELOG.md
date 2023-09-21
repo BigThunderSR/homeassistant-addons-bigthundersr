@@ -3,6 +3,7 @@
 ## 4.12.11
 
 - Changed slug name to use "_" instead of "-" due to breaking change in HA Core 2023.9
+- Updated base to Alpine 3.18
 
 ## 4.12.10
 
