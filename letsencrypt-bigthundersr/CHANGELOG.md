@@ -1,9 +1,13 @@
 # Changelog
 
+## 4.12.12
+
+- Updated base image to Python 3.11 on Alpine 3.18
+
 ## 4.12.11
 
 - Changed slug name to use "_" instead of "-" due to breaking change in HA Core 2023.9
-- Updated base to Alpine 3.18
+- Updated base image to Alpine 3.18
 
 ## 4.12.10
 

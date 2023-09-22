@@ -1,5 +1,5 @@
 ---
-version: 4.12.11
+version: 4.12.12
 slug: letsencrypt_bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
