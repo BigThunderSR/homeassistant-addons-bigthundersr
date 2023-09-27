@@ -9,9 +9,9 @@
 <!-- [![CodeQL](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/github-code-scanning/codeql) -->
 [![Lint](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/lint.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/lint.yaml)
 [![Builder](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/builder.yaml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/builder.yaml)
-[![Notarize Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml)
+<!-- [![Notarize Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_notarize.yml)
 [![Authenticate Assets with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas_authenticate.yml)
-[![Notarize and Authenticate Docker Image BOM with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas-docker-notarize-authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas-docker-notarize-authenticate.yml)
+[![Notarize and Authenticate Docker Image BOM with CAS](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas-docker-notarize-authenticate.yml/badge.svg)](https://github.com/BigThunderSR/homeassistant-addons-bigthundersr/actions/workflows/cas-docker-notarize-authenticate.yml) -->
 
 Home Assistant Add-ons created and/or modified by [BigThunderSR](https://github.com/BigThunderSR).
 
