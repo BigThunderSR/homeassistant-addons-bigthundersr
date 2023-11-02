@@ -27,7 +27,7 @@ This repository contains the following add-ons
 
 ## My other Home Assistant Add-ons
 
-[https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt)
+- [https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt](https://github.com/BigThunderSR/homeassistant-addons-onstar2mqtt)
 
 <!-- _Example add-on to use as a blueprint for new add-ons._ -->
 
