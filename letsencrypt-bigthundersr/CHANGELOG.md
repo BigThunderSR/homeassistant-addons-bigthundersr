@@ -2,9 +2,9 @@
 
 ## 5.0.0
 
-- Upgrade to Certbot 2.7.4 & all DNS authenticator plug-ins
-- Drop CloudXNS (removed in Certbot upstream)
-- Add GANDI DNS propagation delay setting
+- Upgrade to Certbot 2.7.4 & all DNS authenticator plug-ins to match upstream addon update
+- Drop CloudXNS (removed in Certbot upstream) to match upstream addon update
+- Add GANDI DNS propagation delay setting to match upstream addon update
 - Temporarily use certbot-dns-dynu-dev until upstream fix is made in certbot-dns-dynu to remove hard dependency on 'dns-lexicon>=3.11.7'
 
 ## 4.12.12
