@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.0.0
+
+- Upgrade to Certbot 2.7.4 & all DNS authenticator plug-ins
+- Drop CloudXNS (removed in Certbot upstream)
+- Add GANDI DNS propagation delay setting
+- Temporarily use certbot-dns-dynu-dev until upstream fix is made in certbot-dns-dynu to remove hard dependency on 'dns-lexicon>=3.11.7'
+
 ## 4.12.12
 
 - Updated base image to Python 3.11 on Alpine 3.18
