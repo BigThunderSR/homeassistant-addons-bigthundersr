@@ -1,5 +1,7 @@
 # Home Assistant Add-on: Letsencrypt - BigThunderSR Fork
 
+This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider.
+
 ## Installation
 
 Follow these steps to get the add-on installed on your system:
@@ -56,6 +58,7 @@ directadmin_password: ""
 dnsimple_token: ""
 dnsmadeeasy_api_key: ""
 dnsmadeeasy_secret_key: ""
+duckdns_token: ""
 dynu_auth_token: ""
 google_creds: ""
 google_domains_access_token: ""

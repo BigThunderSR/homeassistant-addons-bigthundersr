@@ -1,5 +1,5 @@
 ---
-version: 5.0.0
+version: 5.0.1
 slug: letsencrypt_bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
@@ -46,11 +46,12 @@ schema:
     digitalocean_token: str?
     directadmin_password: str?
     directadmin_url: str?
-    directadmin_username: str?
-    dynu_auth_token: str?
+    directadmin_username: str?    
     dnsimple_token: str?
     dnsmadeeasy_api_key: str?
     dnsmadeeasy_secret_key: str?
+    duckdns_token: str?
+    dynu_auth_token: str?
     gandi_api_key: str?
     gandi_sharing_id: str?
     gehirn_api_secret: str?
@@ -74,8 +75,8 @@ schema:
     ovh_endpoint: str?
     propagation_seconds: int(60,3600)?
     provider: "list(dns-azure|dns-cloudflare|dns-digitalocean|\
-      dns-directadmin|dns-dynu|dns-dnsimple|dns-dnsmadeeasy|dns-gehirn|\
-      dns-google|dns-google-domains|\
+      dns-directadmin|dns-dnsimple|dns-dnsmadeeasy|dns-duckdns|\
+      dns-dynu|dns-gehirn|dns-google|dns-google-domains|\
       dns-hetzner|dns-linode|dns-luadns|dns-njalla|dns-nsone|dns-ovh|\
       dns-rfc2136|dns-route53|dns-sakuracloud|dns-netcup|dns-gandi|\
       dns-transip|dns-inwx)?"

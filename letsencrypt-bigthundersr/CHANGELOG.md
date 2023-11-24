@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.1
+
+- Add DuckDNS DNS challenge support from upstream
+- Fix GANDI configuration file options from upstream
+- Use new non-namesspaced configuration for all DNS providers from upstream 
+
 ## 5.0.0
 
 - Upgrade to Certbot 2.7.4 & all DNS authenticator plug-ins to match upstream addon update
