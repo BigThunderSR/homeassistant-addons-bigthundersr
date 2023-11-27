@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.2
+
+- Fix DirectAdmin DNS challenge support from upstream
+
 ## 5.0.1
 
 - Add DuckDNS DNS challenge support from upstream
