@@ -6,7 +6,8 @@ ARG \
     BUILD_ARCH \
     CRYPTOGRAPHY_VERSION \
     CERTBOT_VERSION \
-    CERTBOT_DNS_AZURE_VERSION \    
+    CERTBOT_DNS_AZURE_VERSION \
+    CERTBOT_DNS_DESEC_VERSION \    
     CERTBOT_DNS_DIRECTADMIN_VERSION \
     CERTBOT_DNS_DUCKDNS_VERSION \
     CERTBOT_DNS_DYNU_VERSION \
@@ -41,7 +42,8 @@ RUN \
         cryptography==${CRYPTOGRAPHY_VERSION} \
         certbot==${CERTBOT_VERSION} \
         certbot-dns-azure==${CERTBOT_DNS_AZURE_VERSION} \
-        certbot-dns-cloudflare==${CERTBOT_VERSION} \        
+        certbot-dns-cloudflare==${CERTBOT_VERSION} \
+        certbot-dns-desec==${CERTBOT_DNS_DESEC_VERSION} \        
         certbot-dns-digitalocean==${CERTBOT_VERSION} \
         certbot-dns-directadmin==${CERTBOT_DNS_DIRECTADMIN_VERSION} \
         certbot-dns-dnsimple==${CERTBOT_VERSION} \

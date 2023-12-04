@@ -51,6 +51,7 @@ azure_config: ""
 cloudflare_email: ""
 cloudflare_api_key: ""
 cloudflare_api_token: ""
+desec_token: ""
 digitalocean_token: ""
 directadmin_url: ""
 directadmin_username: ""
@@ -537,6 +538,7 @@ You can in addition find the files via the "samba" addon within the "ssl" share.
 ```txt
 dns-azure
 dns-cloudflare
+dns-desec
 dns-digitalocean
 dns-directadmin
 dns-dnsimple
