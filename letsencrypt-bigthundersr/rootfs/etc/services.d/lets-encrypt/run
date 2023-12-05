@@ -40,7 +40,7 @@ if [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-route53" ]; then
     export AWS_SECRET_ACCESS_KEY
     PROVIDER_ARGUMENTS+=("--${DNS_PROVIDER}")
 
-#Google
+# Google
 elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-google" ]; then
     bashio::config.require 'dns.google_creds'
     GOOGLE_CREDS="$(bashio::config 'dns.google_creds')"
@@ -54,19 +54,25 @@ elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-google" ]; then
     fi
     PROVIDER_ARGUMENTS+=("--${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/${GOOGLE_CREDS}")
 
-#Google Domains
+# Google Domains
 elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-google-domains" ]; then
     bashio::config.require 'dns.google_domains_access_token'
     PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
 
-#Netcup
+# Namecheap
+elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-namecheap" ]; then
+    bashio::config.require 'dns.namecheap_username'
+    bashio::config.require 'dns.namecheap_api_key'
+    PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
+
+# Netcup
 elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-netcup" ]; then
     bashio::config.require 'dns.netcup_customer_id'
     bashio::config.require 'dns.netcup_api_key'
     bashio::config.require 'dns.netcup_api_password'
     PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
 
-#TransIP
+# TransIP
 elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-transip" ]; then
     bashio::config.require.username 'dns.transip_username'
     bashio::config.require 'dns.transip_api_key'
@@ -96,7 +102,7 @@ elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-directadmin" ]; 
     bashio::config.require 'dns.directadmin_password'
     PROVIDER_ARGUMENTS+=("--authenticator" "directadmin" "--directadmin-credentials" "/data/dnsapikey" "--directadmin-propagation-seconds" "${PROPAGATION_SECONDS}")
 
-#DuckDNS
+# DuckDNS
 elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-duckdns" ]; then
     bashio::config.require 'dns.duckdns_token'
     PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
@@ -156,7 +162,7 @@ elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-desec" ]; then
     PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
 
 
-#All others
+# All others
 else
     PROVIDER_ARGUMENTS+=("--${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey")
 fi
