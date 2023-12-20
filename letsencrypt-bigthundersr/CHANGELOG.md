@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.7
+
+- Add Porkbun DNS challenge support from upstream
+
 ## 5.0.6
 
 - Add Infomaniak DNS challenge support from upstream
