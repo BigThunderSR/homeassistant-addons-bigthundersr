@@ -101,6 +101,8 @@ inwx_password: ""
 inwx_shared_secret: ""
 porkbun_key: ""
 porkbun_secret: ""
+dreamhost_api_baseurl: ''
+dreamhost_api_key: ''
 ```
 
 ## Advanced
@@ -599,6 +601,24 @@ dns:
 
 </details>
 
+<details>
+  <summary>Dreamhost</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-dreamhost
+    dreamhost_baseurl: https://api.dreamhost.com/
+    dreamhost_api_key: XXXXXX
+  ```
+
+</details>
+
 ## Certificate files
 
 The certificate files will be available within the "ssl" share after successful request of the certificates.
@@ -616,6 +636,8 @@ dns-digitalocean
 dns-directadmin
 dns-dnsimple
 dns-dnsmadeeasy
+dns-dreamhost
+dns-duckdns
 dns-dynu
 dns-gehirn
 dns-google
