@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.6
+
+- Add Infomaniak DNS challenge support from upstream
+
 ## 5.0.5
 
 - Fix DirectAdmin DNS challenge support from upstream

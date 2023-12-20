@@ -67,6 +67,7 @@ google_domains_zone: ""
 hetzner_api_token: ""
 gehirn_api_token: ""
 gehirn_api_secret: ""
+infomaniak_api_token: ""
 linode_key: ""
 linode_version: ""
 luadns_email: ""
@@ -236,6 +237,29 @@ To obtain the ACME DNS API token follow the instructions here:
 <https://support.google.com/domains/answer/7630973#acme_dns>
 
 The optional `google_domains_zone` option specifies the domain name registered with Google Domains. If not specified, it is guessed based on the public suffix list.
+
+</details>
+
+<details>
+  <summary>Infomaniak DNS challenge</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - subdomain.home-assistant.io
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-infomaniak
+    infomaniak_api_token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  ```
+
+  To obtain the DNS API token follow the instructions here:
+
+  <https://manager.infomaniak.com/v3/infomaniak-api>
+
+  Choose "Domain" as the scope.
 
 </details>
 
@@ -571,6 +595,7 @@ dns-dynu
 dns-gehirn
 dns-google
 dns-hetzner
+dns-infomaniak
 dns-linode
 dns-luadns
 dns-njalla
