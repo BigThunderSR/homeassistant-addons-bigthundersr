@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.9
+
+- Add option to specify Private Key type from upstream
+
 ## 5.0.8
 
 - Add Dreamhost DNS challenge support from upstream
@@ -32,7 +36,7 @@
 
 - Add DuckDNS DNS challenge support from upstream
 - Fix GANDI configuration file options from upstream
-- Use new non-namesspaced configuration for all DNS providers from upstream 
+- Use new non-namesspaced configuration for all DNS providers from upstream
 
 ## 5.0.0
 
@@ -129,7 +133,7 @@
 
 ## 4.5.0
 
-- Update cerbot to 1.2.0
+- Update certbot to 1.2.0
 - Update image to Alpine 3.11
 - Support CloudFlare API Token
 
@@ -142,7 +146,7 @@
 - Added support for google dns
 - Fixed AWS support
 - Updated documentation
-- Update cerbot to 1.0.0
+- Update certbot to 1.0.0
 
 ## 4.2.0
 
