@@ -17,5 +17,5 @@
       "addlabels": ["dockerfile"],
       "matchPackagePatterns": ["nvm"],
       "addlabels": ["nvm"]
-    },
+    }
 }
