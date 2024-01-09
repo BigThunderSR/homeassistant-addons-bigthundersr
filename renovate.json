@@ -15,5 +15,6 @@
     { "matchPackagePatterns": ["dockerfile"],
       "addlabels": ["dockerfile"] },
     { "matchPackagePatterns": ["nvm"],
-      "addlabels": ["nvm"] }    
+      "addlabels": ["nvm"] }
+  ]
 }
