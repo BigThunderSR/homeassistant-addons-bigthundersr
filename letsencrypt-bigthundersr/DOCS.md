@@ -70,6 +70,7 @@ dns-transip
 dns-inwx
 dns-porkbun
 ```
+
 </details>
 
 <details>
@@ -138,6 +139,7 @@ porkbun_secret: ""
 dreamhost_api_baseurl: ''
 dreamhost_api_key: ''
 ```
+
 </details>
 
 ## Advanced
