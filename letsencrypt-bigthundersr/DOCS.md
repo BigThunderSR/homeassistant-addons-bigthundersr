@@ -37,6 +37,7 @@ There are two options to obtain certificates.
 - Doesn’t need you to open a port to your Home Assistant host on your router.
 
 ### DNS providers
+
 <details>
   <summary>Supported DNS providerss</summary>
 ```txt
@@ -137,6 +138,7 @@ porkbun_secret: ""
 dreamhost_api_baseurl: ''
 dreamhost_api_key: ''
 ```
+</details>
 
 ## Advanced
 
