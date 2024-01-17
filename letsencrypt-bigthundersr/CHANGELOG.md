@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.10
+
+- Add ClouDNS DNS challenge support from upstream
+
 ## 5.0.9
 
 - Add option to specify Private Key type from upstream

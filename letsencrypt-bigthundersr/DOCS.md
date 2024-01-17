@@ -12,7 +12,18 @@ Follow these steps to get the add-on installed on your system:
 
 ## How to use
 
-To use this add-on, you have two options on how to get your certificate:
+The Letsencrypt add-on can be configured via the add-on interface.
+The configuration via YAML is also possible, see the examples below.
+
+Navigate in your Home Assistant frontend to the add-ons overview page at
+**Settings** -> **Add-ons**, and pick the **Let's Encrypt** add-on. On the top,
+pick the **Configuration** page.
+
+Provide the domain names to issue certificates for. Additionally, provide the
+e-mail address used for the registration, and path values for **Priv Key File**
+and **Certificate File**.
+
+There are two options to obtain certificates.
 
 ### 1. HTTP challenge
 
@@ -25,25 +36,43 @@ To use this add-on, you have two options on how to get your certificate:
 - Allows to request wildcard certificates (\*.yourdomain.com)
 - Doesn’t need you to open a port to your Home Assistant host on your router.
 
-### You always need to provide the following entries within the configuration
-
-```yaml
-email: your@email.com
-domains:
-  # use "*.yourdomain.com" for wildcard certificates.
-  - yourdomain.com
-challenge: http OR dns
+### DNS providers
+<details>
+  <summary>Supported DNS providerss</summary>
+```txt
+dns-azure
+dns-cloudflare
+dns-cloudns
+dns-desec
+dns-digitalocean
+dns-directadmin
+dns-dnsimple
+dns-dnsmadeeasy
+dns-duckdns
+dns-dreamhost
+dns-gehirn
+dns-google
+dns-hetzner
+dns-infomaniak
+dns-linode
+dns-luadns
+dns-njalla
+dns-nsone
+dns-ovh
+dns-rfc2136
+dns-route53
+dns-sakuracloud
+dns-namecheap
+dns-netcup
+dns-gandi
+dns-transip
+dns-inwx
+dns-porkbun
 ```
+</details>
 
-IF you choose `dns` as `challenge`, you will also need to fill:
-
-```yaml
-# Add the dnsprovider of your choice from the list of "Supported DNS providers" below
-dns:
-  provider: ""
-```
-
-In addition add the fields according to the credentials required by your DNS provider:
+<details>
+  <summary>In addition add the fields according to the credentials required by your DNS provider:</summary>
 
 ```yaml
 propagation_seconds: 60
@@ -51,6 +80,10 @@ azure_config: ""
 cloudflare_email: ""
 cloudflare_api_key: ""
 cloudflare_api_token: ""
+cloudns_auth_id: ''
+cloudns_sub_auth_id: ''
+cloudns_sub_auth_user: ''
+cloudns_auth_password: ''
 desec_token: ""
 digitalocean_token: ""
 directadmin_url: ""
@@ -649,6 +682,51 @@ dns:
 
 </details>
 
+<details>
+  <summary>ClouDNS</summary>
+In order to use a domain with this challenge, you first need to log into your control panel and create a
+new HTTP API user from the "API & Resellers" page on top of your control panel.
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-cloudns
+    cloudns_auth_id: 12345
+    cloudns_auth_password: ******
+  ```
+API Users have full account access.  It is recommended to create an API Sub-user, which can be limited in scope.  You can use either the `sub-auth-id` or the `sub-auth-user` as follows:
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-cloudns
+    cloudns_sub_auth_id: 12345
+    cloudns_auth_password: ******
+  ```
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-cloudns
+    cloudns_sub_auth_user: alice
+    cloudns_auth_password: ******
+  ```
+</details>
+
 ## Certificate files
 
 The certificate files will be available within the "ssl" share after successful request of the certificates.
@@ -661,6 +739,7 @@ You can in addition find the files via the "samba" addon within the "ssl" share.
 ```txt
 dns-azure
 dns-cloudflare
+dns-cloudns
 dns-desec
 dns-digitalocean
 dns-directadmin

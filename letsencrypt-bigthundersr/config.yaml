@@ -1,5 +1,5 @@
 ---
-version: 5.0.9
+version: 5.0.10
 slug: letsencrypt_bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
@@ -45,6 +45,10 @@ schema:
     cloudflare_api_key: str?
     cloudflare_api_token: str?
     cloudflare_email: email?
+    cloudns_auth_id: int?
+    cloudns_sub_auth_id: int?
+    cloudns_sub_auth_user: str?
+    cloudns_auth_password: str?
     desec_token: str?
     digitalocean_token: str?
     directadmin_password: str?
@@ -83,7 +87,7 @@ schema:
     ovh_consumer_key: str?
     ovh_endpoint: str?
     propagation_seconds: int(60,3600)?
-    provider: "list(dns-azure|dns-cloudflare|dns-desec|dns-digitalocean|\
+    provider: "list(dns-azure|dns-cloudflare|dns-cloudns|dns-desec|dns-digitalocean|\
       dns-directadmin|dns-dnsimple|dns-dnsmadeeasy|dns-dreamhost|dns-duckdns|\
       dns-dynu|dns-gehirn|dns-google|dns-google-domains|\
       dns-hetzner|dns-infomaniak|dns-linode|dns-luadns|dns-njalla|dns-nsone|dns-ovh|dns-porkbun|\
