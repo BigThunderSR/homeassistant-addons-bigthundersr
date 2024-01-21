@@ -69,6 +69,7 @@ schema:
     google_domains_access_token: str?
     google_domains_zone: str?
     hetzner_api_token: str?
+    infomaniak_api_token: str?
     linode_key: str?
     linode_version: str?
     luadns_email: email?
