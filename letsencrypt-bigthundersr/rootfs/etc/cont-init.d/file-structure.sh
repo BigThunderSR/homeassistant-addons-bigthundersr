@@ -31,6 +31,8 @@ echo -e "dns_desec_token = $(bashio::config 'dns.desec_token')\n" \
       "dns_netcup_api_password = $(bashio::config 'dns.netcup_api_password')\n" \
       "dns_njalla_token = $(bashio::config 'dns.njalla_token')\n" \
       "dns_nsone_api_key = $(bashio::config 'dns.nsone_api_key')\n" \
+      "dns_porkbun_key = $(bashio::config 'dns.porkbun_key')\n" \
+      "dns_porkbun_secret = $(bashio::config 'dns.porkbun_secret')\n" \
       "dns_ovh_endpoint = $(bashio::config 'dns.ovh_endpoint')\n" \
       "dns_ovh_application_key = $(bashio::config 'dns.ovh_application_key')\n" \
       "dns_ovh_application_secret = $(bashio::config 'dns.ovh_application_secret')\n" \
@@ -52,15 +54,28 @@ echo -e "dns_desec_token = $(bashio::config 'dns.desec_token')\n" \
       "dns_inwx_password = $(bashio::config 'dns.inwx_password')\n" \
       "dns_inwx_shared_secret = $(bashio::config 'dns.inwx_shared_secret')\n" \
       "dns_google_domains_access_token = $(bashio::config 'dns.google_domains_access_token')\n" \
-      "dns_cloudns_auth_id = $(bashio::config 'dns.cloudns_auth_id')\n" \
-      "dns_cloudns_sub_auth_id = $(bashio::config 'dns.cloudns_sub_auth_id')\n" \
-      "dns_cloudns_sub_auth_user = $(bashio::config 'dns.cloudns_sub_auth_user')\n" \
       "dns_cloudns_auth_password = $(bashio::config 'dns.cloudns_auth_password')\n" \
       "dns_dreamhost_baseurl = $(bashio::config 'dns.dreamhost_baseurl')\n" \
-      "dns_dreamhost_api_key = $(bashio::config 'dns.dreamhost_api_key')\n" > /data/dnsapikey
+      "dns_dreamhost_api_key = $(bashio::config 'dns.dreamhost_api_key')\n" \
+      "dns_he_user = $(bashio::config 'dns.he_user')\n" \
+      "dns_he_pass = $(bashio::config 'dns.he_pass')\n" > /data/dnsapikey
 
 if bashio::config.exists 'dns.google_domains_zone'; then
       echo -e "dns_google_domains_zone = $(bashio::config 'dns.google_domains_zone')\n" >> /data/dnsapikey
+fi
+
+# ClouDNS
+# Only a single non-empty auth option must be in /data/dnsapikey when using ClouDNS to avoid a certbot error
+if bashio::config.exists 'dns.cloudns_auth_id'; then
+      echo -e "dns_cloudns_auth_id = $(bashio::config 'dns.cloudns_auth_id')\n" >> /data/dnsapikey
+fi
+
+if bashio::config.exists 'dns.cloudns_sub_auth_id'; then
+      echo -e "dns_cloudns_sub_auth_id = $(bashio::config 'dns.cloudns_sub_auth_id')\n" >> /data/dnsapikey
+fi
+
+if bashio::config.exists 'dns.cloudns_sub_auth_user'; then
+      echo -e "dns_cloudns_sub_auth_user = $(bashio::config 'dns.cloudns_sub_auth_user')\n" >> /data/dnsapikey
 fi
 
 chmod 600 /data/dnsapikey
@@ -70,4 +85,12 @@ if bashio::config.exists 'dns.transip_api_key'; then
       TRANSIP_API_KEY=$(bashio::config 'dns.transip_api_key')
       echo "${TRANSIP_API_KEY}" | openssl rsa -out /data/transip-rsa.key
       chmod 600 /data/transip-rsa.key
+fi
+
+# Cleanup removed add-on options
+if bashio::config.exists 'dns.cloudxns_api_key'; then
+      bashio::addon.option 'dns.cloudxns_api_key'
+fi
+if bashio::config.exists 'dns.cloudxns_secret_key'; then
+      bashio::addon.option 'dns.cloudxns_secret_key'
 fi

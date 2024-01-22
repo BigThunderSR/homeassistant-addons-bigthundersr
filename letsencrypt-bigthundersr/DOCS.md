@@ -28,12 +28,12 @@ There are two options to obtain certificates.
 ### 1. HTTP challenge
 
 - Requires Port 80 to be available from the internet and your domain assigned to the externally assigned IP address
-- Doesn’t allow wildcard certificates (\*.yourdomain.com).
+- Doesn’t allow wildcard certificates (*.yourdomain.com).
 
 ### 2. DNS challenge
 
 - Requires you to use one of the supported DNS providers (See "Supported DNS providers" below)
-- Allows to request wildcard certificates (\*.yourdomain.com)
+- Allows to request wildcard certificates (*.yourdomain.com)
 - Doesn’t need you to open a port to your Home Assistant host on your router.
 
 ### DNS providers
@@ -141,6 +141,51 @@ dreamhost_api_key: ''
 ```
 
 </details>
+
+### Configure certificate files
+
+The certificate files will be available within the "ssl" share after successful
+request of the certificates.
+
+By default other addons are referring to the correct path of the certificates.
+You can in addition find the files via the "samba" addon within the "ssl" share.
+
+For example, to use the certificates provided by this add-on to enable TLS on
+Home Assistant in the default paths, add the following lines to Home
+Assistant's main configuration file, `configuration.yaml`:
+
+```yaml
+# TLS with letsencrypt add-on
+http:
+  server_port: 443
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+```
+
+### Create & renew certificates
+
+The letsencrypt add-on creates the certificates once it is started: navigate
+to **Settings** -> **Add-ons**, pick the **Let's Encrypt** add-on, click the
+**START** button on the bottom. The add-on stops once the certificates are
+created.
+
+Certificates are not renewed automatically by the plugin. The add-on has to be
+started again to renew certificates. If the add-on is started again, it checks
+if the certificates are due for renewal. This is usually the case 30 days
+before the certificates' due date. If the certificates are not due for renewal,
+the add-on terminates without changes. If the certificates are due for renewal,
+new certificates will be created.
+
+There are multiple ways how the add-on can be started to check/renew the
+certificates. One way to automate the certificate renewal it to configure a
+renewal via [Home Assistant automation][haauto], and then restarting this
+automation every night via the [Supervisor Addon restart action][supervisorrestart].
+
+[haauto]: https://www.home-assistant.io/docs/automation/editor/
+[supervisorrestart]: https://www.home-assistant.io/integrations/hassio/#service-hassioaddon_restart
+
+In this example, the automation will run every day at the chosen time, checking
+if a renewal is due, and will request it if needed.
 
 ## Advanced
 
@@ -611,7 +656,7 @@ challenge: dns
 dns:
   provider: dns-rfc2136
   rfc2136_server: dns-server.dom.ain
-  rfc2136_port: "53"
+  rfc2136_port: '53'
   rfc2136_name: letsencrypt
   rfc2136_secret: "secret-key"
   rfc2136_algorithm: HMAC-SHA512
@@ -731,6 +776,23 @@ API Users have full account access.  It is recommended to create an API Sub-user
   ```
 </details>
 
+<details>
+  <summary>Hurricane Electric (HE)</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-he
+    he_user: me
+    he_pass: ******
+  ```
+</details>
+
 ## Certificate files
 
 The certificate files will be available within the "ssl" share after successful request of the certificates.
@@ -742,8 +804,8 @@ You can in addition find the files via the "samba" addon within the "ssl" share.
 
 ```txt
 dns-azure
-dns-cloudflare
 dns-cloudns
+dns-cloudflare
 dns-desec
 dns-digitalocean
 dns-directadmin

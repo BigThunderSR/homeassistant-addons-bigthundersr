@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.12
+
+- Fix ClouDNS challenge support from upstream
+
+- Add HE DNS challenge support from upstream v5.0.11
+
 ## 5.0.10
 
 - Add ClouDNS DNS challenge support from upstream
