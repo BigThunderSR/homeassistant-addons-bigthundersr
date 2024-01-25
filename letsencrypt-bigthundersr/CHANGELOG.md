@@ -1,9 +1,13 @@
 # Changelog
 
+## 5.0.13
+
+- By default, choose key type based on existing certificates at startup from upstream
+- Allow ECDSA curve selection from upstream
+
 ## 5.0.12
 
 - Fix ClouDNS challenge support from upstream
-
 - Add HE DNS challenge support from upstream v5.0.11
 
 ## 5.0.10
