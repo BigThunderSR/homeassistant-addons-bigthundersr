@@ -81,7 +81,7 @@ elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-transip" ]; then
         bashio::log.info "Increasing DNS propagation limit for TransIP to at least 240 seconds."
         PROPAGATION_SECONDS=240
     fi
-    PROVIDER_ARGUMENTS+=("--authenticator" "certbot-${DNS_PROVIDER}:${DNS_PROVIDER}" "--certbot-${DNS_PROVIDER}:${DNS_PROVIDER}-credentials" /data/dnsapikey "--certbot-${DNS_PROVIDER}:${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
+    PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
 
 # CloudFlare
 elif [ "${DNS_PROVIDER}" == "dns-cloudflare" ]; then
@@ -190,6 +190,13 @@ elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-he" ]; then
     bashio::config.require 'dns.he_pass'
     PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
 
+# easyDNS
+elif [ "${CHALLENGE}" == "dns" ] && [ "${DNS_PROVIDER}" == "dns-easydns" ]; then
+    bashio::config.require 'dns.easydns_key'
+    bashio::config.require 'dns.easydns_token'
+    bashio::config.require 'dns.easydns_endpoint'
+    PROVIDER_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
+    
 # All others
 else
     PROVIDER_ARGUMENTS+=("--${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey")

@@ -13,6 +13,7 @@ ARG \
     CERTBOT_DNS_DREAMHOST_VERSION \
     CERTBOT_DNS_DUCKDNS_VERSION \
     CERTBOT_DNS_DYNU_VERSION \
+    CERTBOT_DNS_EASYDNS_VERSION \
     CERTBOT_DNS_GOOGLE_DOMAINS_VERSION \
     CERTBOT_DNS_HE_VERSION \
     CERTBOT_DNS_HETZNER_VERSION \
@@ -78,6 +79,7 @@ RUN \
         certbot-dns-inwx==${CERTBOT_DNS_INWX_VERSION} \
         certbot-dns-dreamhost==${CERTBOT_DNS_DREAMHOST_VERSION} \
         certbot-dns-he==${CERTBOT_DNS_HE_VERSION} \
+        certbot-dns-easydns==${CERTBOT_DNS_EASYDNS_VERSION} \
         acme==${ACME_VERSION} \
     && apk del .build-dependencies
 

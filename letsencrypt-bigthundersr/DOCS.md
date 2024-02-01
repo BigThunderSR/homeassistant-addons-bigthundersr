@@ -69,6 +69,7 @@ dns-gandi
 dns-transip
 dns-inwx
 dns-porkbun
+dns-easydns
 ```
 
 </details>
@@ -216,10 +217,10 @@ If your custom ACME server uses a certificate signed by an untrusted certificate
   By default the ECDSA key type is used. You can choose to use an RSA key for compatibility with systems where ECDSA keys are not supported. ECDSA is widely supported in modern software with security and performance benefits.
 
   ```yaml
-  keytype: 'rsa'
+  key_type: 'rsa'
   ```
 
-  When the `keytype` parameter is not set, the add-on will attempt to auto-detect an existing certificate's key type or use `ecdsa` by default.
+  When the `key_type` parameter is not set, the add-on will attempt to auto-detect an existing certificate's key type or use `ecdsa` by default.
 
 </details>
 
@@ -229,10 +230,11 @@ If your custom ACME server uses a certificate signed by an untrusted certificate
   You can choose from the following ECDSA elliptic curves: `secp256r1`, `secp384r1`
 
   ```yaml
-  elliptic_curve: 'secp256r1'
+  key_type: 'ecdsa'
+  elliptic_curve: 'secp384r1'
   ```
 
-  When the `elliptic_curve` parameter is not set, ECDSA keys will be generated using `secp384r1`. This option is ignored if `keytype` is set to `"rsa"` or an existing certificate is detected as RSA.
+  When the `elliptic_curve` parameter is not set, ECDSA keys will be generated using the Certbot default. This option must be used with `key_type` set to `'ecdsa'`.
 
 </details>
 
@@ -280,7 +282,7 @@ If your custom ACME server uses a certificate signed by an untrusted certificate
     - home-assistant.io
   certfile: fullchain.pem
   keyfile: privkey.pem
-  keytype: rsa
+  key_type: rsa
   challenge: dns
   dns:
     provider: dns-cloudflare
@@ -829,6 +831,25 @@ References:
 * https://helpcenter.netcup.com/de/wiki/general/unsere-api#authentifizierung
 * https://github.com/coldfix/certbot-dns-netcup/issues/28
 </details>
+<details>
+  <summary>easyDNS</summary>
+
+easyDNS REST API access must be requested and granted in order to use this module: https://cp.easydns.com/manage/security/api/signup.php after logging into your account. 
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-easydns
+    easydns_token: 0123456789abcdef
+    easydns_key: ****
+    easydns_endpoint: https://rest.easydns.net
+  ```
+</details>
 
 ## Certificate files
 
@@ -869,6 +890,7 @@ dns-gandi
 dns-transip
 dns-inwx
 dns-porkbun
+dns-easydns
 ```
 
 ## Support

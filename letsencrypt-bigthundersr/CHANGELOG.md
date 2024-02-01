@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.15
+
+- Add easyDNS challenge support from upstream
+
 ## 5.0.14
 
 - Update docs for key_type setting from upstream
