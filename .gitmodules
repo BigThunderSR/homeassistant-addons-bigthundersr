@@ -1,0 +1,3 @@
+[submodule "submodules/upstream/.addons"]
+	path = submodules/upstream/.addons
+	url = https://github.com/home-assistant/addons.git
