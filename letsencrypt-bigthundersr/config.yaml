@@ -109,4 +109,7 @@ schema:
     dreamhost_baseurl: str?
     he_user: str?
     he_pass: str?
+    easydns_endpoint: str?
+    easydns_key: str?
+    easydns_token: str?
 startup: once
