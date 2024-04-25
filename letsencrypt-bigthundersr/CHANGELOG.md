@@ -1,5 +1,18 @@
 # Changelog
 
+## 5.0.18
+
+- Fix Gandi DNS support using API key from upstream
+- Add Gandi DNS support using token authentication from upstream
+
+## 5.0.17
+
+- Add WebSupport challenge support from upstream
+
+## 5.0.16
+
+- Add Dynu challenge support from upstream - This was already existing in this fork
+
 ## 5.0.15
 
 - Add easyDNS challenge support from upstream

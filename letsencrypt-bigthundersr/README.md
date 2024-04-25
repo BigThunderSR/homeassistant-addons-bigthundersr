@@ -1,6 +1,6 @@
 # Home Assistant Add-on: Letsencrypt - BigThunderSR Fork
 
-This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider.
+This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider before it was added in the upstream version.
 
 Let's Encrypt is a certificate authority that provides free X.509 certificates for Transport Layer Security encryption via an automated process designed to eliminate the hitherto complex process of manual creation, validation, signing, installation, and renewal of certificates for secure websites.
 
