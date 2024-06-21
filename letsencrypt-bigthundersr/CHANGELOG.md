@@ -1,5 +1,18 @@
 # Changelog
 
+## 5.0.21
+
+- Fix configuration to make list of provider parsable again from upstream
+
+## 5.0.20
+
+- Fix file-structure.sh script from upstream
+- Fix domainoffensive plug-in installation from upstream
+
+## 5.0.19
+
+- Add domainoffensive challenge support from upstream
+
 ## 5.0.18
 
 - Fix Gandi DNS support using API key from upstream
