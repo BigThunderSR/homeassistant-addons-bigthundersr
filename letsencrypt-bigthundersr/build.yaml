@@ -5,9 +5,9 @@ build_from:
   armhf: ghcr.io/home-assistant/armhf-base-python:3.11-alpine3.18
   armv7: ghcr.io/home-assistant/armv7-base-python:3.11-alpine3.18
   i386: ghcr.io/home-assistant/i386-base-python:3.11-alpine3.18
-#codenotary:
-#  signer: notary@home-assistant.io
-#  base_image: notary@home-assistant.io
+codenotary:
+  signer: notary@home-assistant.io
+  base_image: notary@home-assistant.io
 args:
   CRYPTOGRAPHY_VERSION: 41.0.5
   CERTBOT_DNS_AZURE_VERSION: 2.4.0
@@ -21,6 +21,7 @@ args:
   CERTBOT_DNS_HETZNER_VERSION: 2.0.0
   CERTBOT_DNS_INFOMANIAK_VERSION: 0.2.1
   CERTBOT_DNS_INWX_VERSION: 2.2.0
+  CERTBOT_DNS_JOKER_VERSION: 1.1.0
   CERTBOT_DNS_NAMECHEAP_VERSION: 1.0.0
   CERTBOT_DNS_GOOGLE_DOMAINS_VERSION: 0.1.11
   CERTBOT_DNS_TRANSIP_VERSION: 0.5.2
