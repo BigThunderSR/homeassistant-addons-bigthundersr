@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.0.24
+
+- Fix Gandi DNS support using API key from upstream
+
+## 5.0.23
+
+- Fix missing domain configuration for joker.com DNS challenge from upstream
+
 ## 5.0.22
 
 - Add joker.com DNS challenge support from upstream
