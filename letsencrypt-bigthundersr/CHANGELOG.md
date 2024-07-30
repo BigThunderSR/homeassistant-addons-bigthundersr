@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.26
+
+- Add noris network DNS challenge support from upstream
+
 ## 5.0.25
 
 - Add DigitalOcean propagation-seconds support from upstream

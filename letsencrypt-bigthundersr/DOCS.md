@@ -116,6 +116,7 @@ linode_version: ''
 luadns_email: ''
 luadns_token: ''
 njalla_token: ''
+noris_token: ''
 nsone_api_key: ''
 ovh_endpoint: ''
 ovh_application_key: ''
@@ -943,6 +944,31 @@ An identifier and secret key have to be obtained to use this module (see https:/
   ```
 </details>
 
+
+<details>
+  <summary>noris network DNS challenge</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-noris
+    noris_token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    propagation_seconds: 240
+  ```
+
+To obtain the `noris_token` follow the instructions as described in our [GitHub repository][GitHub repo].
+
+You can define the `propagation_seconds` explicitly. Otherwise, it will use the default value (currently set to `60` seconds).
+
+[GitHub repo]: https://github.com/noris-network/certbot-dns-norisnetwork#get-your-api-token
+
+</details>
+
 ## Certificate files
 
 The certificate files will be available within the "ssl" share after successful request of the certificates.
@@ -971,6 +997,7 @@ dns-infomaniak
 dns-linode
 dns-luadns
 dns-njalla
+dns-noris
 dns-nsone
 dns-ovh
 dns-rfc2136
