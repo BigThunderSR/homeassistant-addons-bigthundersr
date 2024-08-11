@@ -60,6 +60,7 @@ dns-joker
 dns-linode
 dns-luadns
 dns-njalla
+dns-noris
 dns-nsone
 dns-ovh
 dns-rfc2136
@@ -149,6 +150,9 @@ porkbun_secret: ''
 dreamhost_api_baseurl: ''
 dreamhost_api_key: ''
 domainoffensive_token: ''
+plesk_username: ''
+plesk_password: ''
+plesk_api_url: ''
 ```
 
 </details>
@@ -969,6 +973,34 @@ You can define the `propagation_seconds` explicitly. Otherwise, it will use the 
 
 </details>
 
+
+<details>
+  <summary>Plesk Hosting DNS challenge</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-plesk
+    plesk_username: your-username
+    plesk_password: your-password
+    plesk_api_url: https://plesk.example.com
+    propagation_seconds: 120
+  ```
+
+The `plesk_username` and `plesk_password` are the same as those you use on the login page of your admin panel.
+
+The `plesk_api_url` is the base URL of your Plesk admin panel.
+
+You can define the `propagation_seconds` explicitly. Otherwise, it will use a custom default value (currently set to `120` seconds). If the provided value is less than `120`, then the value is forced to a minimum of `120` seconds.
+
+</details>
+
+
 ## Certificate files
 
 The certificate files will be available within the "ssl" share after successful request of the certificates.
@@ -1000,6 +1032,7 @@ dns-njalla
 dns-noris
 dns-nsone
 dns-ovh
+dns-plesk
 dns-rfc2136
 dns-route53
 dns-sakuracloud
