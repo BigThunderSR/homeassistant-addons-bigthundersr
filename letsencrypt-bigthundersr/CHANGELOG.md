@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.0
+
+- Add external account binding support from upstream
+
 ## 5.0.27
 
 - Add Plesk DNS challenge support from upstream
