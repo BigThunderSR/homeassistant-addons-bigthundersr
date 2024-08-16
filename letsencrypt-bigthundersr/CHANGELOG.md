@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.1
+
+- Add Simply.com DNS support from upstream
+
 ## 5.1.0
 
 - Add external account binding support from upstream
