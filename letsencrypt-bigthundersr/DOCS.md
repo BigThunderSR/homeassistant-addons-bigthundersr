@@ -1,6 +1,6 @@
 # Home Assistant Add-on: Letsencrypt - BigThunderSR Fork
 
-This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider.
+This is a fork of the [official Letsencrypt Home Assistant Add-on](https://github.com/home-assistant/addons/tree/master/letsencrypt) with support added for Dynu as a DNS provider which is now available in the upstream project as well.
 
 ## Installation
 
@@ -57,6 +57,7 @@ dns-godaddy
 dns-google
 dns-hetzner
 dns-infomaniak
+dns-ionos
 dns-joker
 dns-linode
 dns-luadns
@@ -111,6 +112,9 @@ gehirn_api_secret: ''
 godaddy_secret: ''
 godaddy_key: ''
 infomaniak_api_token: ''
+ionos_prefix: ''
+ionos_secret: ''
+ionos_endpoint: ''
 joker_username: ''
 joker_password: ''
 joker_domain: ''
@@ -375,6 +379,8 @@ on the DNS zone to be used for authentication.
 To obtain the ACME DNS API Key and Secret, follow the instructions here:
 <https://developer.godaddy.com/getstarted>
 
+**IMPORTANT**: GoDaddy limits DNS API access to customers with 10 or more domains and/or an active "Discount Domain Club – Premier Membership" plan; the API will respond with a HTTP401 otherwise. See the [Terms of Use](https://developer.godaddy.com/getstarted) for more information.
+
 </details>
 
 <details>
@@ -423,6 +429,28 @@ To obtain the DNS API token follow the instructions here:
 <https://manager.infomaniak.com/v3/infomaniak-api>
 
 Choose "Domain" as the scope.
+
+</details>
+
+<details>
+  <summary>IONOS DNS challenge</summary>
+
+  ```yaml
+  email: your.email@example.com
+  domains:
+    - subdomain.home-assistant.io
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-ionos
+    ionos_prefix: YOUR_IONOS_API_KEY_PREFIX
+    ionos_secret: YOUR_IONOS_API_KEY_SECRET
+    ionos_endpoint: https://api.hosting.ionos.com
+  ```
+
+To obtain the DNS API Key Information, follow the instructions here:
+<https://developer.hosting.ionos.com/>
 
 </details>
 
@@ -1058,6 +1086,7 @@ dns-gehirn
 dns-google
 dns-hetzner
 dns-infomaniak
+dns-ionos
 dns-linode
 dns-luadns
 dns-njalla
