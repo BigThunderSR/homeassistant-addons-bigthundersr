@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.3
+
+- Fix typo in previous update from upstream which prevented the add-on from running
+
 ## 5.2.2
 
 - Add IONOS DNS support from upstream
