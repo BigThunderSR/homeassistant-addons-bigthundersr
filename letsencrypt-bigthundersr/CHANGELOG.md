@@ -1,5 +1,14 @@
 # Changelog
 
+## 5.2.7
+
+- Add mijn.host DNS support from upstream
+- Update certbot-dns-dynu-dev to v0.0.6
+
+## 5.2.6
+
+- Fix dns-loopia username error from upstream
+
 ## 5.2.5
 
 - Update certbot-dns-directadmin to 1.0.12 from upstream
