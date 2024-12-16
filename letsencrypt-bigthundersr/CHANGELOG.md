@@ -1,5 +1,17 @@
 # Changelog
 
+## 5.2.10
+
+- Add transip global_key parameter to config.yaml from upstream
+
+## 5.2.9
+
+- Update certbot-dns-infomaniak to 0.2.3 from upstream
+
+## 5.2.8
+
+- Add transip global_key parameter to support authentication without IP whitelist requirements from upstream
+
 ## 5.2.7
 
 - Add mijn.host DNS support from upstream

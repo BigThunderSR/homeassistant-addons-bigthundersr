@@ -1,5 +1,5 @@
 ---
-version: 5.2.7
+version: 5.2.10
 slug: letsencrypt_bigthundersr
 name: Let's Encrypt - BigThunderSR Fork
 description: Manage certificate from Let's Encrypt
@@ -121,6 +121,7 @@ schema:
     sakuracloud_api_token: str?
     transip_api_key: str?
     transip_username: str?
+    transip_global_key: list(yes|no)?
     inwx_username: str?
     inwx_password: str?
     inwx_shared_secret: str?
