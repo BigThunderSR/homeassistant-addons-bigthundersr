@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.2.12
+
+- Add rfc2136_sign_query parameter to config.yaml from upstream
+
+## 5.2.11
+
+- Use a newer, maintained Hurricane Electric plugin from upstream
+
 ## 5.2.10
 
 - Add transip global_key parameter to config.yaml from upstream
