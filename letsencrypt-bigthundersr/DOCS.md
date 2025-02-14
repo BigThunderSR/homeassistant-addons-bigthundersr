@@ -62,7 +62,7 @@ dns-joker
 dns-linode
 dns-loopia
 dns-luadns
-dns-mijn-host
+dns-mijn-host (currently disable - see changelog)
 dns-njalla
 dns-noris
 dns-simply
@@ -79,7 +79,7 @@ dns-inwx
 dns-porkbun
 dns-easydns
 dns-domainoffensive
-dns-websupport
+dns-websupport (currently disable - see changelog)
 ```
 
 </details>
@@ -139,7 +139,7 @@ rfc2136_port: ''
 rfc2136_name: ''
 rfc2136_secret: ''
 rfc2136_algorithm: ''
-rfc2136_sign_query: ''
+rfc2136_sign_query: false
 aws_access_key_id: ''
 aws_secret_access_key: ''
 sakuracloud_api_token: ''
@@ -993,7 +993,7 @@ dns:
 
 <details>
 
-  <summary>WebSupport</summary>
+  <summary>WebSupport (currently disable - see changelog)</summary>
 
 An identifier and secret key have to be obtained to use this module (see https://admin.websupport.sk/sk/auth/apiKey).
 
@@ -1101,7 +1101,7 @@ The API key assigned to your Simply.com account can be found in your Simply.com 
 </details>
 
 <details>
-  <summary>mijn.host DNS challenge</summary>
+  <summary>mijn.host DNS challenge (currently disable - see changelog)</summary>
 
   ```yaml
   email: your.email@example.com
@@ -1150,7 +1150,7 @@ dns-ionos
 dns-linode
 dns-loopia
 dns-luadns
-dns-mijn-host
+dns-mijn-host (currently disable - see changelog)
 dns-njalla
 dns-noris
 dns-nsone
@@ -1168,7 +1168,7 @@ dns-inwx
 dns-porkbun
 dns-easydns
 dns-domainoffensive
-dns-websupport
+dns-websupport (currently disable - see changelog)
 ```
 
 ## Support
