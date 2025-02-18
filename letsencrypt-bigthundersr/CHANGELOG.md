@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.3.2
+
+- Update certbot to 3.2.0 from upstream
+- Update acme to 3.2.0 from upstream
+- Update certbot-dns-inwx to 3.0.2 from upstream
+
+## 5.3.1
+
+- Add Eurodns DNS support from upstream
+
 ## 5.3.0
 
 - Disabled certbot-dns-mijn-host (Breaking change) from upstream
