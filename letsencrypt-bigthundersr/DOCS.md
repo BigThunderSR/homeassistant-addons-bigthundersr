@@ -63,7 +63,7 @@ dns-joker
 dns-linode
 dns-loopia
 dns-luadns
-dns-mijn-host (currently disable - see changelog)
+dns-mijn-host
 dns-njalla
 dns-noris
 dns-simply
@@ -1174,7 +1174,7 @@ dns-ionos
 dns-linode
 dns-loopia
 dns-luadns
-dns-mijn-host (currently disable - see changelog)
+dns-mijn-host
 dns-njalla
 dns-noris
 dns-nsone

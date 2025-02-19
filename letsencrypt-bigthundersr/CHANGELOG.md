@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.3.3
+
+- Re-enabled certbot-dns-mijn-host from upstream
+
 ## 5.3.2
 
 - Update certbot to 3.2.0 from upstream
