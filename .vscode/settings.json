@@ -40,5 +40,9 @@
         "Tasmota",
         "transip",
         "yourdomain"
-    ]
+    ],
+    "markdownlint.config": {
+        "default": true,
+        "MD033": false
+    }
 }
