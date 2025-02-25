@@ -14,6 +14,7 @@
 name: Codacy Security Scan
 
 on:
+  workflow_run:
   push:
     branches: [ "master" ]
   pull_request:
