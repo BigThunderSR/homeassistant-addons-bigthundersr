@@ -48,8 +48,7 @@ jobs:
         id: changed_addons
         run: |
           declare -a changed_addons
-          CHANGED_FILES="${{ steps.changed_files.outputs.all }}"
-          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "CHANGED_FILES=${{ steps.changed_files.outputs.all }}" >> $GITHUB_ENV
           for addon in ${{ steps.addons.outputs.addons }}; do
             if [[ "$CHANGED_FILES" =~ $addon ]]; then
               for file in ${{ env.MONITORED_FILES }}; do
