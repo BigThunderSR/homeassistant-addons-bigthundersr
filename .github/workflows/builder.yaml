@@ -48,7 +48,7 @@ jobs:
         id: changed_addons
         run: |
           declare -a changed_addons
-          CHANGED_FILES="${{ steps.changed_files.outputs.all }}"
+          echo "CHANGED_FILES=${{ steps.changed_files.outputs.all }}" >> $GITHUB_ENV
           for addon in ${{ steps.addons.outputs.addons }}; do
             if [[ "$CHANGED_FILES" =~ $addon ]]; then
               for file in ${{ env.MONITORED_FILES }}; do
@@ -68,7 +68,7 @@ jobs:
             echo "::set-output name=changed::true";
             echo "::set-output name=addons::[$changed]";
           else
-            echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
+            echo "No add-on had any monitored files changed ($MONITORED_FILES)";
           fi
   build:
     needs: init
