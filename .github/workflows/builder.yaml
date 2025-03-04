@@ -61,9 +61,9 @@ jobs:
               done
             fi
           done
-
+        
           changed=$(echo ${changed_addons[@]} | rev | cut -c 2- | rev)
-
+        
           if [[ -n ${changed} ]]; then
             echo "Changed add-ons: $changed";
             echo "changed=true" >> $GITHUB_OUTPUT;
@@ -72,6 +72,7 @@ jobs:
             echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
             echo "changed=false" >> $GITHUB_OUTPUT;
             echo "addons=[]" >> $GITHUB_OUTPUT;
+          fi
 
   build:
     needs: init
