@@ -1401,7 +1401,7 @@ Example configuration:
 </details>
 
 <details>
-  <summary>WebSupport (currently disabled - see changelog)</summary>
+  <summary>WebSupport</summary>
 
 An identifier and secret key have to be obtained to use this module (see <https://admin.websupport.sk/sk/auth/apiKey>).
 
