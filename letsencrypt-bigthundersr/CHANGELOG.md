@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.4.4
+
+- Update certbot to 3.3.0 from upstream
+- Update acme to 3.3.0 from upstream
+- Update cryptography to 44.0.2 from upstream
+
 ## 5.4.3
 
 - Update certbot-dns-websupport to 3.0.0 from upstream

@@ -85,7 +85,7 @@ dns-route53
 dns-sakuracloud
 dns-simply
 dns-transip
-dns-websupport (currently disable - see changelog)
+dns-websupport
 ```
 
 </details>
@@ -1471,7 +1471,7 @@ dns-route53
 dns-sakuracloud
 dns-simply
 dns-transip
-dns-websupport (currently disable - see changelog)
+dns-websupport
 ```
 
 ## Support
