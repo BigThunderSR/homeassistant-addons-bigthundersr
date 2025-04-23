@@ -107,6 +107,7 @@ if bashio::config.exists 'dns.transip_api_key'; then
       echo "${TRANSIP_API_KEY}" | openssl rsa -out /data/transip-rsa.key
       chmod 600 /data/transip-rsa.key
 fi
+
 # TransIP global_key conditional write out to config 
 if bashio::config.exists 'dns.transip_global_key'; then
       echo -e "dns_transip_global_key = $(bashio::config 'dns.transip_global_key')\n" >> "/data/dnsapikey"

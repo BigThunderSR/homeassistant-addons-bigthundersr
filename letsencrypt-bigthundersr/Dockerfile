@@ -88,7 +88,7 @@ RUN \
         certbot-dns-loopia==${CERTBOT_DNS_LOOPIA_VERSION} \
         certbot-dns-luadns==${CERTBOT_VERSION} \
         certbot-dns-mijn-host==${CERTBOT_DNS_MIJN_HOST_VERSION} \
-        #certbot-dns-namecheap==${CERTBOT_DNS_NAMECHEAP_VERSION} \
+        certbot-dns-namecheap==${CERTBOT_DNS_NAMECHEAP_VERSION} \
         certbot-dns-netcup==${CERTBOT_DNS_NETCUP_VERSION} \
         certbot-dns-njalla==${CERTBOT_DNS_NJALLA_VERSION} \
         certbot-dns-norisnetwork==${CERTBOT_DNS_NORISNETWORK_VERSION} \

@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.4.6
+
+- Fix custom ACME server for DNS challenge (fixes #1769) from upstream
+
+## 5.4.5
+
+- Update certbot-dns-directadmin to 1.0.15 from upstream
+
 ## 5.4.4
 
 - Update certbot to 3.3.0 from upstream
