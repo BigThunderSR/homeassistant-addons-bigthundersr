@@ -253,6 +253,8 @@ If your custom ACME server uses a certificate signed by an untrusted certificate
     -----END CERTIFICATE-----
   ```
 
+When you specify a custom ACME server, the *Dry Run* and *Issue test certificates* options, which are intended for use with the [Let's Encrypt staging server](https://letsencrypt.org/docs/staging-environment/), are automatically disregarded.
+
 </details>
 
 <details>
