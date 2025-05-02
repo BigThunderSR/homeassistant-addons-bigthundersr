@@ -237,7 +237,7 @@ if a renewal is due, and will request it if needed.
 <details>
   <summary>Changing the ACME Server</summary>
 
-By default, the addon uses Let’s Encrypt’s default server at <https://acme-v02.api.letsencrypt.org/>. You can instruct the addon to use a different ACME server by providing the field `acme_server` with the URL of the server’s ACME directory:
+By default, the addon uses [Let’s Encrypt’s default servers](https://letsencrypt.org/getting-started/). You can instruct the addon to use a different ACME server by providing the field `acme_server` with the URL of the server’s ACME directory:
 
   ```yaml
   acme_server: 'https://my.custom-acme-server.com'
