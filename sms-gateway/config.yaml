@@ -25,7 +25,7 @@ options:
   GSM_PIN: ""
   GSM_AUTH: ""
   MQTT_Host: "homeassistant.local"
-  MQTT_Port: "1883"
+  MQTT_Port: 1883
   MQTT_User: "mqtt"
   MQTT_Password: "mqtt"
   MQTT_Receive: "sms_received"
@@ -39,8 +39,8 @@ schema:
   MQTT_Host: str
   MQTT_Port: int
   MQTT_User: str
-  MQTT_Password: str
+  MQTT_Password: password
   MQTT_Receive: str
   MQTT_Send: str
   ADDON_Logging: str
-devices: [/dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0]
+#devices: [/dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0]
