@@ -44,8 +44,6 @@ schema:
   MQTT_Send: str
   ADDON_Logging: str
 devices:
-  - /dev/serial/by-id/usb-SimTech__Incorporated_SimTech__Incorporated_0123456789ABCDEF-if00-port0
-  - /dev/serial/by-id/usb-SimTech__Incorporated_SimTech__Incorporated_0123456789ABCDEF-if01-port0
-  - /dev/serial/by-id/usb-SimTech__Incorporated_SimTech__Incorporated_0123456789ABCDEF-if02-port0
-  - /dev/serial/by-id/usb-SimTech__Incorporated_SimTech__Incorporated_0123456789ABCDEF-if03-port0
-  - /dev/serial/by-id/usb-SimTech__Incorporated_SimTech__Incorporated_0123456789ABCDEF-if04-port0
+  - /dev/ttyUSB[0-9]*
+  - /dev/ttyACM[0-9]*
+  - /dev/serial/by-id/*
