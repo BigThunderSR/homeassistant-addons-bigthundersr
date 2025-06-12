@@ -21,7 +21,7 @@ startup: services
 init: false
 options:
   GSM_Mode: "modem"
-  GSM_Device: "/dev/serial/by-id/xxxx"
+  GSM_Device: "/dev/serial/by-id/usb-xxxx"
   GSM_PIN: ""
   GSM_AUTH: ""
   MQTT_Host: "homeassistant.local"
