@@ -22,7 +22,7 @@ init: false
 options:
   GSM_Mode: "modem"
   GSM_Device: "/dev/serial/by-id/xxxx"
-  GSM_PIN: ""
+  GSM_PIN: 
   GSM_AUTH: ""
   MQTT_Host: "homeassistant.local"
   MQTT_Port: 1883
