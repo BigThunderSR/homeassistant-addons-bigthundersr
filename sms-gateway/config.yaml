@@ -43,4 +43,4 @@ schema:
   MQTT_Receive: str
   MQTT_Send: str
   ADDON_Logging: str
-#devices: [/dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0]
+devices: [/dev/serial/by-id/*]
