@@ -14,17 +14,21 @@ arch:
   - armv7
   - i386
 startup: services
-hassio_api: true
-hassio_role: manager
-homeassistant_api: true
-host_network: true
-auth_api: true
+#hassio_api: true
+#hassio_role: manager
+#homeassistant_api: true
+#host_network: true
+#auth_api: true
 uart: true
+auto_uart: true
+privileged: true
+full_access: true
 #homeassistant_api: true
 #supervisor_api: false
 #auth_api: false
 #ingress: false
 init: false
+log_level: debug
 options:
   GSM_Mode: "modem"
   GSM_Device: "/dev/serial/by-id/usb-xxxx"
