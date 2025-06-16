@@ -22,14 +22,17 @@ startup: services
 uart: true
 privileged:
   - SYS_RAWIO
+  - SYS_ADMIN
+  - DAC_READ_SEARCH
 homeassistant_api: true
 auth_api: true
 #supervisor_api: false
 #ingress: false
 init: false
+host_dbus: true
 options:
   GSM_Mode: "modem"
-  GSM_Device: "/dev/serial/by-id/usb-xxxx"
+  GSM_Device: "/dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0"
   GSM_PIN: "-"
   GSM_AUTH: "-"
   MQTT_Host: "homeassistant.local"

@@ -10,13 +10,14 @@ It handles all GSM7 characters (extended characters not handled)
     ¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§
     ¿abcdefghijklmnopqrstuvwxyzäöñüà
 
-### Integration with Home Assistant 
+### Integration with Home Assistant
 
-Communication/integration with Home Assistant is realized 
-using 2 MQTT topics. 
-- one for HA scripts to send SMS 
+Communication/integration with Home Assistant is realized
+using 2 MQTT topics.
+
+- one for HA scripts to send SMS
   - topic name proposed is `send_sms` but is configurable
-- another one to handle SMS reception and passing them back to 
+- another one to handle SMS reception and passing them back to
 Home Assistant
   - topic name proposed is `sms_received` but is configurable
 
@@ -46,12 +47,13 @@ Your GSM modem must handle the following AT commands/responses
     ATCREG = "AT+CREG?"                       # registered on network ?
     ATCNMI = "AT+CNMI=2,1,0,0,0"              # when sms arrives CMTI send to pc
 
-This add-on is `NOT READY` yet for some modem from Huawei providing full 
+This add-on is `NOT READY` yet for some modem from Huawei providing full
 network with Hilink. You will have to wait for a future release.
 
 ### Home Assistant requirements
 
 On your Home Assistant you must have configured 2 needed add-ons
+
 - **MQTT (used Mosquito broker in dev/test)**
   - define 2 topics to send and receive SMS (by default `send_sms` and `sms_received` are proposed)
 - **Samba Share**
@@ -71,31 +73,57 @@ On your Home Assistant you must have configured 2 needed add-ons
     MQTT_Send: send_sms
     ADDON_Logging: INFO
 
-- GSM_Mode : 
+- GSM_Mode :
   - 'modem' ('api' under construction)
-- GSM_Device: 
-    - /dev/ttyUSBx
-    - /dev/ttyACMx
-    - /dev/serial/by-id/...... (this one is preferable)
-      - it is recommended to use a "by-id" path to the 
+- GSM_Device:
+  - /dev/ttyUSBx
+  - /dev/ttyACMx
+  - /dev/serial/by-id/...... (this one is preferable)
+    - it is recommended to use a "by-id" path to the
       device if one exists, as it is not subject to change if other devices are added
-      to the system. 
-      - You may find the correct value for this by going to Settings
+      to the system.
+    - You may find the correct value for this by going to Settings
       -> System -> Hardware and then look for USB details.
-- GSM_PIN: 
+
+### Troubleshooting Device Access Issues
+
+If you encounter errors like "device exception while opening /dev/ttyUSBx":
+
+1. **Check the device path**:
+   - The exact path may change depending on what other USB devices are connected
+   - In Home Assistant, go to Settings -> System -> Hardware -> "..." menu -> "All Hardware"
+   - Look for entries with "tty" or "serial" that match your GSM modem
+   - Using `/dev/serial/by-id/...` paths is more reliable than `/dev/ttyUSBx` paths
+
+2. **Check permissions**:
+   - The add-on should have proper permissions through the configuration
+   - If using a USB hub, try connecting the modem directly to the machine
+   - Some modems require a few seconds to initialize - try restarting the add-on after waiting
+
+3. **Test with different device paths**:
+   - If `/dev/ttyUSB0` doesn't work, try `/dev/ttyUSB1` through `/dev/ttyUSB9`
+   - Some modems appear as `/dev/ttyACM0` or similar
+   - Check if your modem has multiple interfaces (some have separate interfaces for data and control)
+
+4. **Check if other services are using the device**:
+   - Only one program can access the serial port at a time
+   - Check if any other add-ons might be trying to use the same device
+
+- GSM_PIN:
   - Pin code of the Sim
-- GSM_AUTH: 
-  - Comma separated list of authorized mobile numbers to receive sms from. 
+- GSM_AUTH:
+  - Comma separated list of authorized mobile numbers to receive sms from.
 Other will be rejected by the add-on
-- MQTT_Receive: 
+- MQTT_Receive:
   - Topic on which add-on will publish received SMS
-- MQTT_Send: 
+- MQTT_Send:
   - Topic on which HA will publish SMS to be sent by the add-on
-- ADDON_Logging: 
-  - use python logging levels 
+- ADDON_Logging:
+  - use python logging levels
     - DEBUG, INFO, WARNING, ERROR, CRITICAL
 
 ### Home Assistant Sending SMS example
+
 Automation and Script example
 
     alias: test_send_sms
@@ -125,6 +153,7 @@ Automation and Script example
     mode: single
 
 ### Home Assistant Receiving SMS example
+
 Automation and Script example
 
     alias: sms-received
@@ -169,12 +198,12 @@ Automation and Script example
 
 ### Contributors
 
-- see https://github.com/Helios06/sms_gateway for last release
+- see <https://github.com/Helios06/sms_gateway> for last release
 - See [contributors page](https://github.com/Helios06/sms_gateway) for a list of contributors.
 
 ### MIT License
 
-Copyright (c) 2023-2024  Helios  helios14_75@hotmail.fr
+Copyright (c) 2023-2024  Helios  <helios14_75@hotmail.fr>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
