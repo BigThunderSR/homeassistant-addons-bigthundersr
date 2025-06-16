@@ -20,7 +20,8 @@ startup: services
 #host_network: true
 #auth_api: true
 uart: true
-privileged: true
+privileged:
+  - SYS_RAWIO
 homeassistant_api: true
 auth_api: true
 #supervisor_api: false
