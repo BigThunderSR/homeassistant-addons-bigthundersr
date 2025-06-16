@@ -20,15 +20,12 @@ startup: services
 #host_network: true
 #auth_api: true
 uart: true
-auto_uart: true
 privileged: true
-full_access: true
-#homeassistant_api: true
+homeassistant_api: true
+auth_api: true
 #supervisor_api: false
-#auth_api: false
 #ingress: false
 init: false
-log_level: debug
 options:
   GSM_Mode: "modem"
   GSM_Device: "/dev/serial/by-id/usb-xxxx"
@@ -40,7 +37,7 @@ options:
   MQTT_Password: "mqtt"
   MQTT_Receive: "sms_received"
   MQTT_Send: "send_sms"
-  ADDON_Logging: "INFO"
+  ADDON_Logging: "DEBUG"
 schema:
   GSM_Mode: str
   GSM_Device: str
