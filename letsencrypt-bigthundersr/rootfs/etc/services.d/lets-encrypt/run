@@ -356,8 +356,10 @@ fi
 
 # Gather all domains into a plaintext file
 DOMAIN_ARR=()
+DOMAIN_FLAGS=()
 for line in $DOMAINS; do
-    DOMAIN_ARR+=(-d "$line")
+    DOMAIN_ARR+=("$line")
+    DOMAIN_FLAGS+=(-d "$line")
 done
 echo "$DOMAINS" > /data/domains.gen
 
@@ -375,8 +377,8 @@ if bashio::config.exists 'key_type'; then
         fi
     fi
 else
-    bashio::log.info "Detecting existing certificate type for ${DOMAIN_ARR[1]}"
-    readarray -t CBCERTS < <(certbot certificates --non-interactive --cert-name "${DOMAIN_ARR[1]}" --config-dir "$CERT_DIR" --work-dir "$WORK_DIR")
+    bashio::log.info "Detecting existing certificate type for ${DOMAIN_ARR[0]}"
+    readarray -t CBCERTS < <(certbot certificates --non-interactive --cert-name "${DOMAIN_ARR[0]}" --config-dir "$CERT_DIR" --work-dir "$WORK_DIR")
     for output in "${CBCERTS[@]}"; do
         # shellcheck disable=SC2076
         if [[ $output =~ "No certificates found." ]]; then
@@ -408,7 +410,7 @@ certbot certonly --non-interactive --keep-until-expiring --expand \
     --email "$EMAIL" --agree-tos \
     "${KEY_ARGUMENTS[@]}" \
     "${ADDITIONAL_ARGS[@]}" \
-    --cert-name "${DOMAIN_ARR[1]}" "${DOMAIN_ARR[@]}" \
+    --cert-name "${DOMAIN_ARR[0]}" "${DOMAIN_FLAGS[@]}" \
     --config-dir "$CERT_DIR" --work-dir "$WORK_DIR" \
     --preferred-challenges "$CHALLENGE" \
     "${ACME_ARGUMENTS[@]}" \
