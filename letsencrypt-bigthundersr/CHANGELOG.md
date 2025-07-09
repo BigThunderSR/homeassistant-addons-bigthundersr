@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.4.9d
+
+- Debug logging for domain parsing
+
 ## 5.4.9c
 
 - Fix domain array parsing to properly handle both single domains and arrays of domains
