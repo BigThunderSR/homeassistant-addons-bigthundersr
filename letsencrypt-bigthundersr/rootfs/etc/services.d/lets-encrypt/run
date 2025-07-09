@@ -112,19 +112,6 @@ if [ "${CHALLENGE}" == "dns" ]; then
         # Dynu
         'dns-dynu')
             bashio::config.require 'dns.dynu_auth_token'
-            # Add debug logging for Dynu
-            bashio::log.info "Debug: Domain to validate: ${DOMAIN_ARR[0]}"
-            bashio::log.info "Debug: Dynu will attempt to create TXT record for: _acme-challenge.${DOMAIN_ARR[0]}"
-            bashio::log.info "Debug: Dynu credentials file content:"
-            if [ -f "/data/dnsapikey" ]; then
-                cat "/data/dnsapikey" | while read line; do
-                    if [[ "$line" == *"dynu"* ]]; then
-                        bashio::log.info "Debug: $line"
-                    fi
-                done
-            else
-                bashio::log.info "Debug: /data/dnsapikey file not found!"
-            fi
             ACME_ARGUMENTS+=("--authenticator" "${DNS_PROVIDER}" "--${DNS_PROVIDER}-credentials" "/data/dnsapikey" "--${DNS_PROVIDER}-propagation-seconds" "${PROPAGATION_SECONDS}")
             ;;
 
@@ -442,17 +429,6 @@ if bashio::config.has_value 'eab_kid' ; then
 fi
 
 # Generate a new certificate if necessary or expand a previous certificate if domains has changed
-bashio::log.info "Debug: Final certbot command arguments:"
-bashio::log.info "Debug: Email: $EMAIL"
-bashio::log.info "Debug: KEY_ARGUMENTS: ${KEY_ARGUMENTS[*]}"
-bashio::log.info "Debug: ADDITIONAL_ARGS: ${ADDITIONAL_ARGS[*]}"
-bashio::log.info "Debug: Cert name: ${DOMAIN_ARR[0]}"
-bashio::log.info "Debug: DOMAIN_FLAGS: ${DOMAIN_FLAGS[*]}"
-bashio::log.info "Debug: CERT_DIR: $CERT_DIR, WORK_DIR: $WORK_DIR"
-bashio::log.info "Debug: CHALLENGE: $CHALLENGE"
-bashio::log.info "Debug: ACME_ARGUMENTS: ${ACME_ARGUMENTS[*]}"
-bashio::log.info "Debug: EAB_ARGUMENTS: ${EAB_ARGUMENTS[*]}"
-
 certbot certonly --non-interactive --keep-until-expiring --expand \
     --email "$EMAIL" --agree-tos \
     "${KEY_ARGUMENTS[@]}" \
