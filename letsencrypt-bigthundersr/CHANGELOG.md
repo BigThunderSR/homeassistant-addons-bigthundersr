@@ -1,9 +1,5 @@
 # Changelog
 
-## 5.4.9b
-
-- Fix for subdomain DNS challenge not working for all DNS providers
-
 ## 5.4.9a
 
 - Update certbot-dns-dynu to 0.0.9
