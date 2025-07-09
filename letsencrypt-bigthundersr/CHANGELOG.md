@@ -1,11 +1,5 @@
 # Changelog
 
-## 5.4.9f
-
-- Fix critical argument mixing issue between DNS authenticator and general certbot arguments
-- Separate ACME_ARGUMENTS for DNS providers from CERTBOT_GENERAL_ARGS for certbot general options
-- Remove incorrect --preferred-chain argument from DNS authenticator arguments
-
 ## 5.4.9e
 
 - Fix unbound variable error in DOMAIN_ARR array access

@@ -10,7 +10,6 @@ ACME_ARGUMENTS=()
 KEY_ARGUMENTS=()
 EAB_ARGUMENTS=()
 ADDITIONAL_ARGS=()
-CERTBOT_GENERAL_ARGS=()
 
 EMAIL=$(bashio::config 'email')
 DOMAINS=$(bashio::config 'domains')
@@ -352,7 +351,7 @@ if bashio::config.has_value 'acme_server'; then
     fi
 else
     # Relevant only for default Let's Encrypt servers.
-    CERTBOT_GENERAL_ARGS+=(--preferred-chain 'ISRG Root X1')
+    ACME_ARGUMENTS+=(--preferred-chain 'ISRG Root X1')
     if [ "${DRY_RUN}" = "true" ]; then
         ADDITIONAL_ARGS+=("--dry-run")
     fi
@@ -455,14 +454,12 @@ bashio::log.info "Debug: DOMAIN_FLAGS: ${DOMAIN_FLAGS[*]}"
 bashio::log.info "Debug: CERT_DIR: $CERT_DIR, WORK_DIR: $WORK_DIR"
 bashio::log.info "Debug: CHALLENGE: $CHALLENGE"
 bashio::log.info "Debug: ACME_ARGUMENTS: ${ACME_ARGUMENTS[*]}"
-bashio::log.info "Debug: CERTBOT_GENERAL_ARGS: ${CERTBOT_GENERAL_ARGS[*]}"
 bashio::log.info "Debug: EAB_ARGUMENTS: ${EAB_ARGUMENTS[*]}"
 
 certbot certonly --non-interactive --keep-until-expiring --expand \
     --email "$EMAIL" --agree-tos \
     "${KEY_ARGUMENTS[@]}" \
     "${ADDITIONAL_ARGS[@]}" \
-    "${CERTBOT_GENERAL_ARGS[@]}" \
     --cert-name "${DOMAIN_ARR[0]}" "${DOMAIN_FLAGS[@]}" \
     --config-dir "$CERT_DIR" --work-dir "$WORK_DIR" \
     --preferred-challenges "$CHALLENGE" \
