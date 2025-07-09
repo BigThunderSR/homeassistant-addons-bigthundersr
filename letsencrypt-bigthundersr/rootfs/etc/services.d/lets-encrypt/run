@@ -357,34 +357,11 @@ fi
 # Gather all domains into a plaintext file
 DOMAIN_ARR=()
 DOMAIN_FLAGS=()
-
-# Parse domains from JSON array to bash array
-while IFS= read -r domain; do
-    if [[ -n "$domain" ]]; then
-        DOMAIN_ARR+=("$domain")
-        DOMAIN_FLAGS+=(-d "$domain")
-    fi
-done < <(bashio::config 'domains' | jq -r '.[]' 2>/dev/null || echo "$DOMAINS")
-
-# Fallback: if jq parsing fails, try space-separated parsing
-if [ ${#DOMAIN_ARR[@]} -eq 0 ]; then
-    for line in $DOMAINS; do
-        if [[ -n "$line" ]]; then
-            DOMAIN_ARR+=("$line")
-            DOMAIN_FLAGS+=(-d "$line")
-        fi
-    done
-fi
-
-echo "$DOMAINS" > /data/domains.gen
-
-# Debug information
-bashio::log.info "Raw domains config: $DOMAINS"
-bashio::log.info "Number of domains parsed: ${#DOMAIN_ARR[@]}"
-bashio::log.info "First domain (cert name): ${DOMAIN_ARR[0]}"
-for i in "${!DOMAIN_ARR[@]}"; do
-    bashio::log.info "Domain $i: ${DOMAIN_ARR[$i]}"
+for line in $DOMAINS; do
+    DOMAIN_ARR+=("$line")
+    DOMAIN_FLAGS+=(-d "$line")
 done
+echo "$DOMAINS" > /data/domains.gen
 
 # Key detection or manual ECDSA/RSA selection
 if bashio::config.exists 'key_type'; then

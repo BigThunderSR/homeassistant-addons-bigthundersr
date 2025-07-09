@@ -1,11 +1,5 @@
 # Changelog
 
-## 5.4.9c
-
-- Fix domain array parsing to properly handle both single domains and arrays of domains
-- Fix subdomain DNS challenge certificate naming to use first domain instead of second domain
-- Add debug logging for domain parsing
-
 ## 5.4.9b
 
 - Fix for subdomain DNS challenge not working for all DNS providers
