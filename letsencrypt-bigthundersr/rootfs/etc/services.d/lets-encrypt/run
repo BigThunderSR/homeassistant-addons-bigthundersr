@@ -112,9 +112,6 @@ if [ "${CHALLENGE}" == "dns" ]; then
         # Dynu
         'dns-dynu')
             bashio::config.require 'dns.dynu_auth_token'
-            # Add debug logging for Dynu
-            bashio::log.info "Debug: Domain to validate: ${DOMAIN_ARR[0]}"
-            bashio::log.info "Debug: Dynu will attempt to create TXT record for: _acme-challenge.${DOMAIN_ARR[0]}"
             bashio::log.info "Debug: Dynu credentials file content:"
             if [ -f "/data/dnsapikey" ]; then
                 cat "/data/dnsapikey" | while read line; do
@@ -398,6 +395,12 @@ bashio::log.info "First domain (cert name): ${DOMAIN_ARR[0]}"
 for i in "${!DOMAIN_ARR[@]}"; do
     bashio::log.info "Domain $i: ${DOMAIN_ARR[$i]}"
 done
+
+# Additional debug for Dynu
+if [ "${DNS_PROVIDER}" == "dns-dynu" ]; then
+    bashio::log.info "Debug: Domain to validate: ${DOMAIN_ARR[0]}"
+    bashio::log.info "Debug: Dynu will attempt to create TXT record for: _acme-challenge.${DOMAIN_ARR[0]}"
+fi
 
 # Key detection or manual ECDSA/RSA selection
 if bashio::config.exists 'key_type'; then

@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.4.9e
+
+- Fix unbound variable error in DOMAIN_ARR array access
+- Move debug logging to correct position after domain parsing
+
 ## 5.4.9d
 
 - Debug logging for domain parsing
